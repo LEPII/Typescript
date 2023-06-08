@@ -1,9 +1,27 @@
-function add(n1: number, n2: number) {
-  return n1 + n2;
+interface Person {
+  name: string;
+  age: number;
+  shifter: boolean;
+  role: number
 }
 
-const number1 = 20
-const number2 = 23;
+enum Titans {
+  Armor, 
+  Colossal,
+  Female,
+  Founding,
+  Beast,
+  Attack,
+  Jaw,
+  Cart,
+  Warhammer
+}
 
-const res = add(number1, number2)
-console.log(res)
+const hero: Person = {
+  name: "Jon Snow",
+  age: 25,
+  shifter: true,
+  role: Titans.Warhammer,
+} 
+
+console.log(hero)
