@@ -1,0 +1,22 @@
+1. tsc fileName.ts -w or --watch 
+The file is automatically compiled upon saving. 
+2. tsc --init you initialize the project as a typescript project.  
+use #2 w/ tsc -w command to auto-compile the whole project. 
+
+// tsconfig.json // 
+
+-  "exclude": ["Exclude files that won't run on the whole project. Use *.ext to remove files with certain extensions. Ex file.dev.ts Good idea to include node_modules. It is the default but if the exclude option is used, it will not be on automatically for node_modules"]
+
+-  "target": You tell TypeScript for which target JavaScript version you want to compile the code. So the good thing here is that we can use TypeScript to generate code that works in older browsers as well. But it's totally up to use if we want to do that. Maybe we don't want to do that with TypeScript, because maybe we got some other build tool that will then take care about the JavaScript transpilation and therefore we don't want to have TypeScript do that, or maybe we wanna ship code that only works in modern browsers because we know our app only will run in modern browsers.
+
+- "lib": [Lib is an option that allows you to specify which default objects and features TypeScript knows.] 
+  If it's not set the defaults depend on your "target" setting.
+
+- "OutDir" & "rootDir": "So often you set both rootDir and outDir to be really clear regarding where you input files live and where your output files would be generated in."
+
+- "removeComments": "Should be pretty clear if you set this, then any comments you might have in your TypeScript files, will be removed in the compiled JavaScript files."
+
+- "noEmit": "If you don't want to generate any JavaScript files. Now this might sound strange because that's the idea of TypeScript, but if you just want to check whether your files are correct but you don't want to write all these output files, to save some time, for example, in a bigger project, then you could set this to "true" to just have the types of compiler check your files and report any potential errors without actually creating an output file."
+
+- "strictNullChecks": "They tell TypeScript to be pretty, well strict regarding how you access and work with values that might potentially hold a null value." 
+

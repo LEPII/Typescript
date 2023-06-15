@@ -1,3 +1,24 @@
+"use strict";
+class FootballTeams {
+    constructor(team, year, id) {
+        this.team = team;
+        this.year = year;
+        this.id = id;
+        this.rivalTeams = [];
+        this.currentRoster = [];
+    }
+    addPlayer(...player) {
+        this.currentRoster.push(...player);
+    }
+}
+const saints = new FootballTeams("New Orleans Saints", 2021, "id1");
+const currentRoster = () => {
+    console.log(`The ${saints.year} ${saints.team}'s Roster: ${saints.currentRoster}`);
+};
+const mvps = saints.addPlayer("Drew Brees", "Alvin Kamara", "Cam Jordan");
+currentRoster();
+class NbaTeams extends  {
+}
 var Titans;
 (function (Titans) {
     Titans[Titans["Armor"] = 0] = "Armor";
@@ -10,34 +31,30 @@ var Titans;
     Titans["Beast"] = "Beast";
     Titans["Attack"] = "Attack";
 })(Titans || (Titans = {}));
-var hero = {
+const hero = {
     name: "Jon Snow",
     age: 25,
     shifter: true,
     role: Titans.Warhammer,
 };
-var underdog = {
+const underdog = {
     name: "Jimmy Butler",
     age: 33,
     shifter: true,
     role: Titans.Beast,
 };
-var villan = {
+const villan = {
     name: "Homelander",
     age: 3,
     shifter: true,
     role: Titans.Attack,
 };
-var finalBattle = function (input1, input2) {
-    var finalShowdown;
+const finalBattle = (input1, input2) => {
+    let finalShowdown;
     if (typeof input1 === "boolean" && typeof input2 === "boolean")
-        finalShowdown = "".concat(underdog.role, " vs ").concat(villan.role);
+        finalShowdown = `${underdog.role} vs ${villan.role}`;
     else {
         finalShowdown = input1.toString() + input2.toString();
     }
     return finalShowdown;
 };
-var finale = finalBattle(hero.shifter, villan.shifter);
-console.log(finale);
-var Alterfinale = finalBattle(villan.age, villan.shifter);
-console.log(Alterfinale);
